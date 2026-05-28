@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(int i = 1; i <= n; i++) {
+        sum = sum + i;
+    }
+
+    printf("Sum of first %d natural numbers = %d", n, sum);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    long long fact = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        fact = fact * i;
+    }
+
+    printf("Factorial of %d = %lld", n, fact);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int num;
+    long long product = 1;
+
+    printf("Enter how many numbers: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        printf("Enter number %d: ", i);
+        scanf("%d", &num);
+
+        product = product * num;
+    }
+
+    printf("Multiplication of all numbers = %lld", product);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int num, count = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Handle 0 separately
+    if (num == 0) {
+        count = 1;
+    } else {
+        // Count digits
+        while (num != 0) {
+            num = num / 10;
+            count++;
+        }
+    }
+
+    printf("Number of digits = %d", count);
+
+    return 0;
+}
+
+a. git init 
+b. git add Day-1
+c. git commit -m “Day-1 uplodaded.”
+d. git branch -M main
+e. git remote add origin <paste your repo url>
+f. git push -u origin main
