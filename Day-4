@@ -1,0 +1,122 @@
+#include <stdio.h>
+
+int main() {
+    int n, first = 0, second = 1, next, i;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    for(i = 0; i < n; i++) {
+        printf("%d ", first);
+
+        next = first + second;
+        first = second;
+        second = next;
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    long long a = 0, b = 1, c;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    if (n == 1)
+        printf("The %dth Fibonacci term is %lld", n, a);
+    else if (n == 2)
+        printf("The %dth Fibonacci term is %lld", n, b);
+    else {
+        for (i = 3; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        printf("The %dth Fibonacci term is %lld", n, b);
+    }
+
+    return 0;
+}
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, temp, digit, digits = 0;
+    int sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    temp = num;
+
+    // Count digits
+    while (temp != 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    temp = num;
+
+    // Calculate Armstrong sum
+    while (temp != 0) {
+        digit = temp % 10;
+        sum += pow(digit, digits);
+        temp /= 10;
+    }
+
+    if (sum == num)
+        printf("%d is an Armstrong number.", num);
+    else
+        printf("%d is not an Armstrong number.", num);
+
+    return 0;
+}
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int start, end, num, temp, rem, sum, digits;
+
+    printf("Enter start and end of range: ");
+    scanf("%d %d", &start, &end);
+
+    printf("Armstrong numbers between %d and %d are:\n", start, end);
+
+    for (num = start; num <= end; num++) {
+        temp = num;
+        digits = 0;
+        sum = 0;
+
+        // Count digits
+        while (temp != 0) {
+            digits++;
+            temp /= 10;
+        }
+
+        temp = num;
+
+        // Calculate Armstrong sum
+        while (temp != 0) {
+            rem = temp % 10;
+            sum += pow(rem, digits);
+            temp /= 10;
+        }
+
+        if (sum == num)
+            printf("%d ", num);
+    }
+
+    return 0;
+}
+a. git init 
+b. git add Day-1
+c. git commit -m “Day-1 uplodaded.”
+d. git branch -M main
+e. git remote add origin <paste your repo url>
+f. git push -u origin main
+
