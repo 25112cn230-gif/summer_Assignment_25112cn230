@@ -1,0 +1,116 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(i = 1; i < n; i++) {
+        if(n % i == 0) {
+            sum += i;
+        }
+    }
+
+    if(sum == n)
+        printf("%d is a Perfect Number.", n);
+    else
+        printf("%d is not a Perfect Number.", n);
+
+    return 0;
+}
+#include <stdio.h>
+
+int factorial(int n)
+{
+    int fact = 1;
+    for(int i = 1; i <= n; i++)
+    {
+        fact = fact * i;
+    }
+    return fact;
+}
+
+int main()
+{
+    int start, end, num, temp, digit, sum;
+
+    printf("Enter start and end of range: ");
+    scanf("%d %d", &start, &end);
+
+    printf("Strong numbers are:\n");
+
+    for(num = start; num <= end; num++)
+    {
+        temp = num;
+        sum = 0;
+
+        while(temp > 0)
+        {
+            digit = temp % 10;
+            sum += factorial(digit);
+            temp /= 10;
+        }
+
+        if(sum == num)
+        {
+            printf("%d ", num);
+        }
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int n, i;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    printf("Factors of %d are: ", n);
+
+    for(i = 1; i <= n; i++)
+    {
+        if(n % i == 0)
+        {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    long long n, largestFactor = -1;
+
+    printf("Enter a number: ");
+    scanf("%lld", &n);
+
+    while (n % 2 == 0) {
+        largestFactor = 2;
+        n /= 2;
+    }
+
+    for (long long i = 3; i * i <= n; i += 2) {
+        while (n % i == 0) {
+            largestFactor = i;
+            n /= i;
+        }
+    }
+
+    if (n > 2)
+        largestFactor = n;
+
+    printf("Largest Prime Factor = %lld", largestFactor);
+
+    return 0;
+}
+a. git init 
+b. git add Day-1
+c. git commit -m “Day-1 uplodaded.”
+d. git branch -M main
+e. git remote add origin <paste your repo url>
+f. git push -u origin main
