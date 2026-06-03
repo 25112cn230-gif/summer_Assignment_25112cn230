@@ -1,0 +1,85 @@
+#include <stdio.h>
+int main() { int num, binary[32], i = 0;
+printf("Enter a decimal number: ");
+scanf("%d", &num);
+
+while (num > 0) {
+    binary[i] = num % 2;
+    num = num / 2;
+    i++;
+}
+
+printf("Binary equivalent: ");
+for (int j = i - 1; j >= 0; j--) {
+    printf("%d", binary[j]);
+}
+
+return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int bin, dec = 0, rem, base = 1;
+
+    printf("Enter a binary number: ");
+    scanf("%d", &bin);
+
+    while (bin > 0) {
+        rem = bin % 10;
+        dec = dec + rem * base;
+        base = base * 2;
+        bin = bin / 10;
+    }
+
+    printf("Decimal equivalent = %d", dec);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int num, count = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    while (num > 0) {
+        if (num % 2 == 1)
+            count++;
+
+        num = num / 2;
+    }
+
+    printf("Number of set bits = %d", count);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int x, n, result = 1;
+
+    printf("Enter x and n: ");
+    scanf("%d %d", &x, &n);
+
+    for(int i = 1; i <= n; i++) {
+        result = result * x;
+    }
+
+    printf("%d^%d = %d", x, n, result);
+
+    return 0;
+}
+a. git init 
+
+b. git add Day-1
+
+c. git commit -m “Day-1 uplodaded.”
+
+d. git branch -M main
+
+e. git remote add origin <paste your repo url>
+
+f. git push -u origin main
+
