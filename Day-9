@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+
+    for(i = 5; i >= 1; i--)
+    {
+        for(j = 1; j <= i; j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+
+    for(i = 5; i >= 1; i--)
+    {
+        for(j = 1; j <= i; j++)
+        {
+            printf("%d", j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+    char ch = 'A';
+
+    for(i = 1; i <= 5; i++)
+    {
+        for(j = 1; j <= i; j++)
+        {
+            printf("%c", ch);
+        }
+        ch++;
+        printf("\n");
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+
+    for(i = 1; i <= 5; i++)
+    {
+        for(j = 1; j <= 5; j++)
+        {
+            if(i == 1 || i == 5 || j == 1 || j == 5)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+a. git init 
+
+b. git add Day-1
+
+c. git commit -m “Day-1 uplodaded.”
+
+d. git branch -M main
+
+e. git remote add origin <paste your repo url>
+
+f. git push -u origin main
