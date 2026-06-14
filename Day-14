@@ -1,0 +1,139 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[100], n, i, key, found = 0;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter element to search: ");
+    scanf("%d", &key);
+
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] == key)
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found)
+        printf("Element found at position %d", i + 1);
+    else
+        printf("Element not found");
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int arr[100], n, i, element, count = 0;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter element to find frequency: ");
+    scanf("%d", &element);
+
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] == element)
+            count++;
+    }
+
+    printf("Frequency of %d = %d", element, count);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int arr[100], n, i;
+    int largest, second;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    largest = second = -99999;
+
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] > largest)
+        {
+            second = largest;
+            largest = arr[i];
+        }
+        else if(arr[i] > second && arr[i] != largest)
+        {
+            second = arr[i];
+        }
+    }
+
+    printf("Second largest number = %d", second);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int arr[100], n, i, j;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Duplicate elements are: ");
+
+    for(i = 0; i < n; i++)
+    {
+        for(j = i + 1; j < n; j++)
+        {
+            if(arr[i] == arr[j])
+            {
+                printf("%d ", arr[i]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
+a. git init 
+
+b. git add Day-1
+
+c. git commit -m “Day-1 uplodaded.”
+
+d. git branch -M main
+
+e. git remote add origin <paste your repo url>
+
+f. git push -u origin main
