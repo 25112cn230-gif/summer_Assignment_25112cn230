@@ -1,0 +1,134 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, temp;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Reverse the array
+    for(i = 0; i < n / 2; i++) {
+        temp = arr[i];
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
+    }
+
+    printf("Reversed array:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, temp, k;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter number of rotations: ");
+    scanf("%d", &k);
+
+    k = k % n;
+
+    while(k--) {
+        temp = arr[0];
+
+        for(i = 0; i < n - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+
+        arr[n - 1] = temp;
+    }
+
+    printf("Left rotated array:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, temp;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Right rotate by 1
+    temp = arr[n-1];
+
+    for(i = n-1; i > 0; i--) {
+        arr[i] = arr[i-1];
+    }
+
+    arr[0] = temp;
+
+    printf("Right rotated array:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, j = 0, temp;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Move non-zero elements to front
+    for(i = 0; i < n; i++) {
+        if(arr[i] != 0) {
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            j++;
+        }
+    }
+
+    printf("Array after moving zeros to end:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+a. git init 
+
+b. git add Day-1
+
+c. git commit -m “Day-1 uplodaded.”
+
+d. git branch -M main
+
+e. git remote add origin <paste your repo url>
+
+f. git push -u origin main
+
