@@ -1,0 +1,129 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, sum = 0, total;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    // Total sum from 1 to n+1
+    total = (n + 1) * (n + 2) / 2;
+
+    printf("Missing number = %d", total - sum);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, j, count, max = 0, element;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for(i = 0; i < n; i++) {
+        count = 1;
+
+        for(j = i + 1; j < n; j++) {
+            if(arr[i] == arr[j]) {
+                count++;
+            }
+        }
+
+        if(count > max) {
+            max = count;
+            element = arr[i];
+        }
+    }
+
+    printf("Maximum frequency element = %d", element);
+    printf("\nFrequency = %d", max);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, j, sum;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter required sum: ");
+    scanf("%d", &sum);
+
+    for(i = 0; i < n; i++) {
+        for(j = i + 1; j < n; j++) {
+            if(arr[i] + arr[j] == sum) {
+                printf("Pair found: %d and %d", arr[i], arr[j]);
+                return 0;
+            }
+        }
+    }
+
+    printf("No pair found");
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, j, k;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for(i = 0; i < n; i++) {
+        for(j = i + 1; j < n; j++) {
+            if(arr[i] == arr[j]) {
+                for(k = j; k < n - 1; k++) {
+                    arr[k] = arr[k + 1];
+                }
+                n--;
+                j--;
+            }
+        }
+    }
+
+    printf("Array after removing duplicates:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+a. git init 
+
+b. git add Day-1
+
+c. git commit -m “Day-1 uplodaded.”
+
+d. git branch -M main
+
+e. git remote add origin <paste your repo url>
+
+f. git push -u origin main
+
+
