@@ -1,0 +1,164 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[100], b[100], c[200];
+    int n1, n2, i;
+
+    printf("Enter size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter elements of first array:\n");
+    for(i=0; i<n1; i++)
+        scanf("%d", &a[i]);
+
+    printf("Enter size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter elements of second array:\n");
+    for(i=0; i<n2; i++)
+        scanf("%d", &b[i]);
+
+    for(i=0; i<n1; i++)
+        c[i] = a[i];
+
+    for(i=0; i<n2; i++)
+        c[n1+i] = b[i];
+
+    printf("Merged array:\n");
+    for(i=0; i<n1+n2; i++)
+        printf("%d ", c[i]);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int a[100], b[100], c[200];
+    int n1, n2, i, j, k = 0, flag;
+
+    printf("Enter size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter elements of first array:\n");
+    for(i = 0; i < n1; i++)
+        scanf("%d", &a[i]);
+
+    printf("Enter size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter elements of second array:\n");
+    for(i = 0; i < n2; i++)
+        scanf("%d", &b[i]);
+
+    // Copy first array
+    for(i = 0; i < n1; i++)
+        c[k++] = a[i];
+
+    // Add elements of second array if not present
+    for(i = 0; i < n2; i++)
+    {
+        flag = 0;
+        for(j = 0; j < n1; j++)
+        {
+            if(b[i] == a[j])
+            {
+                flag = 1;
+                break;
+            }
+        }
+
+        if(flag == 0)
+            c[k++] = b[i];
+    }
+
+    printf("Union of arrays:\n");
+    for(i = 0; i < k; i++)
+        printf("%d ", c[i]);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int a[100], b[100];
+    int n1, n2, i, j;
+
+    printf("Enter size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter elements of first array:\n");
+    for(i = 0; i < n1; i++)
+        scanf("%d", &a[i]);
+
+    printf("Enter size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter elements of second array:\n");
+    for(i = 0; i < n2; i++)
+        scanf("%d", &b[i]);
+
+    printf("Intersection of arrays:\n");
+
+    for(i = 0; i < n1; i++)
+    {
+        for(j = 0; j < n2; j++)
+        {
+            if(a[i] == b[j])
+            {
+                printf("%d ", a[i]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int a[100], b[100];
+    int n1, n2, i, j;
+
+    printf("Enter size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter elements of first array:\n");
+    for(i = 0; i < n1; i++)
+        scanf("%d", &a[i]);
+
+    printf("Enter size of second array: ");
+    scanf("%d", &n2);
+
+    printf("Enter elements of second array:\n");
+    for(i = 0; i < n2; i++)
+        scanf("%d", &b[i]);
+
+    printf("Common elements are:\n");
+
+    for(i = 0; i < n1; i++)
+    {
+        for(j = 0; j < n2; j++)
+        {
+            if(a[i] == b[j])
+            {
+                printf("%d ", a[i]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
+a. git init 
+b. git add Day-1
+c. git commit -m “Day-1 uplodaded.”
+d. git branch -M main
+e. git remote add origin <paste your repo url>
+f. git push -u origin main
+
+
+
