@@ -1,0 +1,143 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[100], n, i, j, temp;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    for(i = 0; i < n-1; i++)
+    {
+        for(j = 0; j < n-i-1; j++)
+        {
+            if(a[j] > a[j+1])
+            {
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted array:\n");
+    for(i = 0; i < n; i++)
+        printf("%d ", a[i]);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int a[100], n, i, j, min, temp;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    for(i = 0; i < n-1; i++)
+    {
+        min = i;
+
+        for(j = i+1; j < n; j++)
+        {
+            if(a[j] < a[min])
+                min = j;
+        }
+
+        temp = a[i];
+        a[i] = a[min];
+        a[min] = temp;
+    }
+
+    printf("Sorted array:\n");
+    for(i = 0; i < n; i++)
+        printf("%d ", a[i]);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int a[100], n, i, key;
+    int low, high, mid;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter sorted elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    printf("Enter element to search: ");
+    scanf("%d", &key);
+
+    low = 0;
+    high = n - 1;
+
+    while(low <= high)
+    {
+        mid = (low + high) / 2;
+
+        if(a[mid] == key)
+        {
+            printf("Element found at position %d", mid + 1);
+            return 0;
+        }
+        else if(a[mid] < key)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+
+    printf("Element not found");
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int a[100], n, i, j, temp;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    for(i = 0; i < n-1; i++)
+    {
+        for(j = i+1; j < n; j++)
+        {
+            if(a[i] < a[j])
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+
+    printf("Descending order:\n");
+    for(i = 0; i < n; i++)
+        printf("%d ", a[i]);
+
+    return 0;
+}
+a. git init 
+b. git add Day-1
+c. git commit -m “Day-1 uplodaded.”
+d. git branch -M main
+e. git remote add origin <paste your repo url>
+f. git push -u origin main
